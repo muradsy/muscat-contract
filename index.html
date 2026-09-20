@@ -6,11 +6,11 @@
     <title>بلدية مسقط - استمارة عقد إيجار جديد</title>
     <style>
         body { font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #f4f6f9; margin: 0; padding: 0; color: #333; direction: rtl; }
-        .wrapper { max-width: 100%; margin: 0 auto; background: #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-        .main-header { text-align: center; padding: 20px; border-bottom: 3px solid #cca133; background: #fff; }
-        .main-header img { max-width: 100px; height: auto; }
-        .main-header h1 { color: #0c3352; font-size: 20px; margin: 10px 0 5px 0; font-weight: bold; }
-        .page-title { background: #0c3352; color: #fff; text-align: center; padding: 8px; font-size: 16px; font-weight: bold; }
+        .wrapper { max-width: 100%; margin: 0 auto; background: #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.05); padding-bottom: 40px; }
+        .main-header { text-align: center; padding: 20px; border-bottom: 3px solid #cca133; background: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        .main-header img { max-width: 120px; height: auto; display: block; margin: 0 auto 10px auto; }
+        .main-header h1 { color: #0c3352; font-size: 20px; margin: 5px 0; font-weight: bold; }
+        .page-title { background: #0c3352; color: #fff; text-align: center; padding: 10px; font-size: 16px; font-weight: bold; }
         .section-box { margin: 15px; border: 1px solid #e1e4e8; border-radius: 4px; overflow: hidden; background: #fff; }
         .section-header { background: #f8f9fa; color: #0c3352; padding: 10px 15px; font-weight: bold; font-size: 14px; border-bottom: 1px solid #e1e4e8; border-right: 4px solid #cca133; }
         .section-body { padding: 15px; display: grid; grid-template-columns: 1fr; gap: 12px; }
@@ -18,7 +18,6 @@
         .form-control label { font-size: 12px; font-weight: bold; color: #555; margin-bottom: 5px; }
         .form-control label span { color: red; }
         .form-control input, .form-control select, .form-control textarea { width: 100%; padding: 10px; border: 1px solid #cccccc; border-radius: 4px; font-size: 13px; box-sizing: border-box; background-color: #fff; color: #333; }
-        .form-control input:focus, .form-control select:focus { border-color: #0c3352; outline: none; }
         .checkbox-row { display: flex; align-items: center; gap: 10px; padding: 5px 15px; font-size: 13px; font-weight: bold; color: #333; }
         .checkbox-row input { width: 18px; height: 18px; cursor: pointer; }
         .table-container { margin: 15px; overflow-x: auto; border: 1px solid #e1e4e8; border-radius: 4px; }
@@ -26,17 +25,15 @@
         .data-table th { background: #0c3352; color: #fff; padding: 10px; font-weight: bold; border: 1px solid #e1e4e8; }
         .data-table td { padding: 8px; border: 1px solid #e1e4e8; }
         .data-table input { width: 100%; padding: 6px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; text-align: center; }
-        .footer-action { padding: 20px 15px; background: #f8f9fa; border-top: 1px solid #e1e4e8; text-align: center; }
-        .btn-submit { background-color: #0c3352; color: #fff; border: none; padding: 14px; font-size: 15px; font-weight: bold; border-radius: 4px; cursor: pointer; width: 100%; max-width: 300px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-bottom: 3px solid #061f33; }
-        .btn-submit:hover { background-color: #061f33; }
+        .footer-action { padding: 25px 15px; background: #f8f9fa; border-top: 1px solid #e1e4e8; text-align: center; display: block !important; visibility: visible !important; }
+        .btn-submit { background-color: #0c3352; color: #fff; border: none; padding: 15px; font-size: 16px; font-weight: bold; border-radius: 4px; cursor: pointer; width: 100%; max-width: 320px; box-shadow: 0 4px 6px rgba(0,0,0,0.15); border-bottom: 4px solid #061f33; display: inline-block !important; }
     </style>
 </head>
 <body>
 
 <div class="wrapper">
     <div class="main-header">
-        <!-- تم ربط الشعار الأصلي لبلدية مسقط مباشرة من خادم موثوق ليظهر على الموبايل -->
-        <img src="https://mm.gov.om" alt="شعار بلدية مسقط">
+        <img src="./logo.png" alt="شعار بلدية مسقط">
         <h1>بلدية مسقط</h1>
     </div>
     
@@ -47,7 +44,7 @@
         <div class="section-header">بيانات المؤجر</div>
         <div class="section-body">
             <div class="form-control"><label>تعريف المؤجر <span>*</span></label><select id="landlordType"><option>الرقم المدني</option><option>السجل التجاري</option></select></div>
-            <div class="form-control"><label>الرقم التعريفي للمؤجر (الرقم المدني ، السجل التجاري) <span>*</span></label><input type="text" id="ownerId" placeholder="أدخل الرقم التعريفي"></div>
+            <div class="form-control"><label>الرقم التعريفي للمؤجر <span>*</span></label><input type="text" id="ownerId" placeholder="أدخل الرقم التعريفي"></div>
             <div class="form-control"><label>علاقة المؤجر <span>*</span></label><select id="ownerRelation"><option>نفس المالك</option><option>وكيل</option></select></div>
             <div class="form-control"><label>اسم المؤجر <span>*</span></label><input type="text" id="ownerName" placeholder="أدخل اسم المؤجر كاملاً"></div>
             <div class="form-control"><label>رقم الهاتف النقال <span>*</span></label><input type="text" id="ownerPhone" placeholder="9xxxxxxx"></div>
@@ -63,7 +60,7 @@
         <div class="section-header">بيانات المالك (في حالة اختلاف بيانات مالك العقار عن مالك الوحدات)</div>
         <div class="checkbox-row">
             <input type="checkbox" id="sameAsOwner" checked>
-            <label>هل مالك الوحدة (المؤجر بالعقد) هو نفس مالك البناية؟</label>
+            <label>هل مالك الوحدة هو نفس مالك البناية؟</label>
         </div>
     </div>
 
@@ -77,15 +74,13 @@
             <div class="form-control"><label>رقم السكة</label><input type="text" id="wayNo"></div>
             <div class="form-control"><label>رقم الشارع</label><input type="text" id="streetName"></div>
             <div class="form-control"><label>رقم المجمع <span>*</span></label><input type="text" id="blockNo"></div>
-            <div class="form-control"><label>المنطقة <span>*</span></label><input type="text" id="areaZone" placeholder="مثال: بلدية مسقط في السيب - المعبيلة الجنوبية"></div>
+            <div class="form-control"><label>المنطقة <span>*</span></label><input type="text" id="areaZone" placeholder="مثال: بلدية مسقط في السيب"></div>
             <div class="form-control"><label>اسم المربع (طبقاً للملكية)</label><input type="text" id="blockMulkia"></div>
             <div class="form-control"><label>رقم القطعة <span>*</span></label><input type="text" id="plotNo"></div>
-            <div class="form-control"><label>رقم الكروكي (طبقاً للملكية) <span>*</span></label><input type="text" id="krookieNo"></div>
-            <div class="form-control"><label>رقم حساب الكهرباء للعقار <span>*</span></label><input type="text" id="electricityNo"></div>
-            <div class="form-control"><label>رقم حساب المياه للعقار</label><input type="text" id="waterNo"></div>
+            <div class="form-control"><label>رقم الكروكي <span>*</span></label><input type="text" id="krookieNo"></div>
+            <div class="form-control"><label>رقم حساب الكهرباء <span>*</span></label><input type="text" id="electricityNo"></div>
+            <div class="form-control"><label>رقم حساب المياه</label><input type="text" id="waterNo"></div>
         </div>
-        <div class="checkbox-row"><input type="checkbox" id="subContract"><label>عقد من الباطن</label></div>
-        <div class="checkbox-row"><input type="checkbox" id="fullBuilding" checked><label>تأجير كلي للمبنى</label></div>
     </div>
 
     <!-- بيانات الوحدات -->
@@ -136,3 +131,5 @@
         <div class="section-body">
             <div class="form-control"><label>تاريخ بداية العقد <span>*</span></label><input type="date" id="fromDate"></div>
             <div class="form-control"><label>تاريخ نهاية العقد <span>*</span></label><input type="date" id="toDate"></div>
+            <div class="form-control"><label>إجمالي القيمة الإيجارية <span>*</span></label><input type="text" id="rentalValue"></div>
+            <div class="form-control"><label>طريقة دفع مبلغ الإيجار <span>*</span></label><select id="paymentMethod"><option>الدفع الالكتروني</option><option>نقدي</option></select></div>
