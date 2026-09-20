@@ -3,40 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>بلدية مسقط - استمارة عقد إيجار جديد</title>
+    <title>بلدية مسقط</title>
     <style>
-        body { font-family: sans-serif; background-color: #f4f6f9; margin: 0; padding: 0; color: #333; direction: rtl; text-align: right; }
-        .wrapper { max-width: 100%; margin: 0 auto; background: #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.05); padding-bottom: 40px; }
-        .main-header { text-align: center; padding: 20px; border-bottom: 3px solid #cca133; background: #fff; }
-        .main-header img { max-width: 120px; height: auto; display: block; margin: 0 auto 10px auto; }
-        .main-header h1 { color: #0c3352; font-size: 20px; margin: 5px 0; font-weight: bold; }
-        .page-title { background: #0c3352; color: #fff; text-align: center; padding: 10px; font-size: 16px; font-weight: bold; }
-        .section-box { margin: 15px; border: 1px solid #e1e4e8; border-radius: 4px; overflow: hidden; background: #fff; }
-        .section-header { background: #f8f9fa; color: #0c3352; padding: 10px 15px; font-weight: bold; font-size: 14px; border-bottom: 1px solid #e1e4e8; border-right: 4px solid #cca133; }
-        .section-body { padding: 15px; display: grid; grid-template-columns: 1fr; gap: 12px; }
-        .form-control { display: flex; flex-direction: column; }
-        .form-control label { font-size: 12px; font-weight: bold; color: #555; margin-bottom: 5px; }
-        .form-control label span { color: red; }
-        .form-control input, .form-control select, .form-control textarea { width: 100%; padding: 10px; border: 1px solid #cccccc; border-radius: 4px; font-size: 13px; box-sizing: border-box; background-color: #fff; color: #333; }
-        .checkbox-row { display: flex; align-items: center; gap: 10px; padding: 5px 15px; font-size: 13px; font-weight: bold; color: #333; }
-        .checkbox-row input { width: 18px; height: 18px; }
-        .table-container { margin: 15px; overflow-x: auto; border: 1px solid #e1e4e8; border-radius: 4px; }
-        .data-table { width: 100%; border-collapse: collapse; font-size: 13px; text-align: center; }
-        .data-table th { background: #0c3352; color: #fff; padding: 10px; font-weight: bold; border: 1px solid #e1e4e8; }
-        .data-table td { padding: 8px; border: 1px solid #e1e4e8; }
-        .data-table input { width: 100%; padding: 6px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; text-align: center; }
-        .footer-action { padding: 25px 15px; background: #f8f9fa; border-top: 1px solid #e1e4e8; text-align: center; }
-        .btn-submit { background-color: #cca133; color: #fff; border: none; padding: 15px; font-size: 16px; font-weight: bold; border-radius: 4px; cursor: pointer; width: 90%; max-width: 320px; box-shadow: 0 4px 6px rgba(0,0,0,0.15); border-bottom: 4px solid #99741f; margin: 10px auto; display: block; }
+        body { font-family: sans-serif; background: #f4f6f9; padding: 15px; text-align: right; direction: rtl; }
+        .box { background: #fff; padding: 20px; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); max-width: 500px; margin: 0 auto; }
+        h2 { color: #0c3352; border-bottom: 2px solid #cca133; padding-bottom: 8px; font-size: 18px; text-align: center; }
+        label { font-size: 13px; font-weight: bold; display: block; margin: 10px 0 5px 0; }
+        input, select { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; font-size: 13px; }
+        .btn { background: #0c3352; color: white; border: none; padding: 14px; width: 100%; font-weight: bold; border-radius: 4px; margin-top: 20px; cursor: pointer; font-size: 15px; border-bottom: 3px solid #051d30; }
     </style>
 </head>
 <body>
-<div class="wrapper">
-    <div class="main-header">
-        <img src="./logo.png" alt="شعار بلدية مسقط">
-        <h1>بلدية مسقط</h1>
-    </div>
-    <div class="page-title">استمارة عقد إيجار جديد</div>
+<div class="box">
+    <div style="text-align:center;"><img src="./logo.png" style="max-width:100px;height:auto;"><h2 style="margin-top:10px;">استمارة عقد إيجار - بلدية مسقط</h2></div>
     
-    <!-- زر تحميل علوي احتياطي لضمان ظهوره على الهاتف -->
-    <button class="btn-submit" type="button" onclick="startPDFGeneration()">اضغط هنا لحفظ وتنزيل الـ PDF مسبقاً</button>
+    <label>اسم المؤجر (المالك) *</label>
+    <input type="text" id="ownerName" placeholder="أدخل الاسم الكامل">
     
+    <label>الرقم المدني للمؤجر *</label>
+    <input type="text" id="ownerId" placeholder="أدخل الرقم المدني">
+    
+    <label>رقم الهاتف النقال *</label>
+    <input type="text" id="ownerPhone" placeholder="9xxxxxxx">
+
+    <label>اسم المستأجر *</label>
+    <input type="text" id="tenantName" placeholder="أدخل اسم المستأجر">
+
+    <label>رقم المبنى *</label>
+    <input type="text" id="buildingNo" placeholder="رقم المبنى">
+
+    <label>القيمة الإيجارية شهرياً *</label>
+    <input type="text" id="rentalValue" placeholder="مثال: 150">
+
+    <button class="btn" type="button" onclick="startPDFGeneration()">حفظ البيانات وتنزيل الـ PDF المباشر</button>
+</div>
+<script src="https://unpkg.com"></script>
+<script src="https://unpkg.com"></script>
+<script src="script.js"></script>
+</body>
+</html>
