@@ -3,37 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>بلدية مسقط</title>
+    <title>بلدية مسقط - استمارة عقد إيجار جديد</title>
     <style>
-        body { font-family: sans-serif; background: #f4f6f9; padding: 15px; text-align: right; direction: rtl; }
-        .box { background: #fff; padding: 20px; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); max-width: 500px; margin: 0 auto; }
-        h2 { color: #0c3352; border-bottom: 2px solid #cca133; padding-bottom: 8px; font-size: 18px; text-align: center; }
-        label { font-size: 13px; font-weight: bold; display: block; margin: 10px 0 5px 0; }
-        input, select { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; font-size: 13px; }
+        body { font-family: sans-serif; background: #f4f6f9; padding: 10px; direction: rtl; text-align: right; }
+        .box { background: #fff; padding: 15px; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); max-width: 600px; margin: 0 auto; padding-bottom: 30px; }
+        h2 { color: #0c3352; border-bottom: 2px solid #cca133; padding-bottom: 5px; font-size: 16px; text-align: center; }
+        .title { background: #0c3352; color: #fff; padding: 6px; font-weight: bold; font-size: 13px; margin-top: 15px; border-right: 3px solid #cca133; }
+        label { font-size: 11px; font-weight: bold; display: block; margin: 8px 0 3px 0; color: #444; }
+        input, select, textarea { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; font-size: 13px; }
         .btn { background: #0c3352; color: white; border: none; padding: 14px; width: 100%; font-weight: bold; border-radius: 4px; margin-top: 20px; cursor: pointer; font-size: 15px; border-bottom: 3px solid #051d30; }
     </style>
 </head>
 <body>
 <div class="box">
-    <div style="text-align:center;"><img src="./logo.png" style="max-width:100px;height:auto;"><h2 style="margin-top:10px;">استمارة عقد إيجار - بلدية مسقط</h2></div>
+    <div style="text-align:center;"><img src="./logo.png" style="max-width:90px;height:auto;"><h2>استمارة عقد إيجار جديد - بلدية مسقط</h2></div>
     
-    <label>اسم المؤجر (المالك) *</label>
-    <input type="text" id="ownerName" placeholder="أدخل الاسم الكامل">
-    
-    <label>الرقم المدني للمؤجر *</label>
-    <input type="text" id="ownerId" placeholder="أدخل الرقم المدني">
-    
-    <label>رقم الهاتف النقال *</label>
-    <input type="text" id="ownerPhone" placeholder="9xxxxxxx">
+    <div class="title">بيانات المؤجر (المالك)</div>
+    <label>تعريف المؤجر *</label><select id="landlordType"><option>الرقم المدني</option><option>السجل التجاري</option></select>
+    <label>الرقم التعريفي للمؤجر *</label><input type="text" id="ownerId" placeholder="أدخل الرقم المدني أو التجاري">
+    <label>اسم المؤجر كاملاً *</label><input type="text" id="ownerName" placeholder="اسم المالك كما في الهوية">
+    <label>رقم الهاتف النقال *</label><input type="text" id="ownerPhone" placeholder="9xxxxxxx">
+    <label>علاقة المؤجر *</label><select id="ownerRelation"><option>نفس المالك</option><option>وكيل</option></select>
+    <label>العنوان وصندوق البريد</label><input type="text" id="ownerAddress" placeholder="أدخل تفاصيل العنوان">
 
-    <label>اسم المستأجر *</label>
-    <input type="text" id="tenantName" placeholder="أدخل اسم المستأجر">
+    <div class="title">بيانات العقار والبلدية</div>
+    <label>الغرض من العقد *</label><select id="contractUsage"><option>سكني</option><option>تجاري</option><option>صناعي</option></select>
+    <label>نوع إستعمال السكني *</label><select id="residentialType"><option>سكن عائلي</option><option>عزاب</option></select>
+    <label>رقم المبنى *</label><input type="text" id="buildingNo" placeholder="رقم المبنى">
+    <label>رقم السكة / الشارع</label><input type="text" id="wayNo" placeholder="رقم السكة">
+    <label>رقم المجمع والمنطقة *</label><input type="text" id="areaZone" placeholder="مثال: المجمع 511 - السيب">
+    <label>رقم القطعة ورقم الكروكي *</label><input type="text" id="plotNo" placeholder="رقم القطعة / الكروكي">
+    <label>رقم حساب الكهرباء للعقار *</label><input type="text" id="electricityNo" placeholder="حساب الكهرباء">
+    <label>رقم حساب المياه</label><input type="text" id="waterNo" placeholder="حساب المياه">
 
-    <label>رقم المبنى *</label>
-    <input type="text" id="buildingNo" placeholder="رقم المبنى">
+    <div class="title">بيانات الوحدات المستأجرة</div>
+    <label>نوع الوحدة ورقمها</label><input type="text" id="unitType" value="تأجير كامل البناية - وحدة رقم 0">
+    <label>تفاصيل القيمة وحسابات الوحدة</label><input type="text" id="unitDetails" placeholder="تفاصيل العدادات الإضافية للوحدة">
 
-    <label>القيمة الإيجارية شهرياً *</label>
-    <input type="text" id="rentalValue" placeholder="مثال: 150">
+    <div class="title">بيانات المستأجر الفعلي</div>
+    <label>تعريف المستأجر *</label><select id="tenantType"><option>الرقم المدني</option><option>جواز السفر</option></select>
+    <label>الرقم التعريفي للمستأجر *</label><input type="text" id="tenantId" placeholder="الرقم التعريفي للمستأجر">
+    <label>اسم المستأجر كاملاً *</label><input type="text" id="tenantName" placeholder="اسم المستأجر الفعلي">
+    <label>رقم الهاتف النقال للمستأجر *</label><input type="text" id="tenantPhone" placeholder="رقم الهاتف">
+    <label>العنوان والبريد الإلكتروني للمستأجر</label><input type="text" id="tenantAddress" placeholder="تفاصيل الاتصال">
+
+    <div class="title">تفاصيل العقد والالتزامات المالية</div>
+    <label>تاريخ بداية العقد *</label><input type="date" id="fromDate">
+    <label>تاريخ نهاية العقد *</label><input type="date" id="toDate">
+    <label>إجمالي القيمة الإيجارية شهرياً (بالريال العماني) *</label><input type="text" id="rentalValue" placeholder="مثال: 150">
+    <label>طريقة دفع الإيجار *</label><select id="paymentMethod"><option>الدفع الالكتروني</option><option>نقدي</option></select>
+    <label>ملاحظات وشروط إضافية</label><textarea id="notes" rows="2" placeholder="أي ملاحظات تكتب هنا"></textarea>
 
     <button class="btn" type="button" onclick="startPDFGeneration()">حفظ البيانات وتنزيل الـ PDF المباشر</button>
 </div>
