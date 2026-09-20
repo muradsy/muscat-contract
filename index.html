@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>استمارة عقد إيجار جديد - بلدية مسقط</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f7f6; margin: 0; padding: 15px; color: #333; }
+        .container { max-width: 100%; background: #fff; margin: 0 auto; padding: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-radius: 8px; box-sizing: border-box; }
+        h2, h3 { color: #005a9c; border-bottom: 2px solid #005a9c; padding-bottom: 8px; margin-top: 10px; }
+        .section { margin-bottom: 20px; }
+        .form-group { margin-bottom: 12px; }
+        label { display: block; font-weight: bold; margin-bottom: 5px; font-size: 14px; }
+        input[type="text"], input[type="email"], select { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; font-size: 14px; }
+        .btn-submit { background-color: #005a9c; color: white; border: none; padding: 14px 20px; font-size: 16px; font-weight: bold; border-radius: 4px; cursor: pointer; width: 100%; margin-top: 15px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div style="text-align: center; margin-bottom: 20px;">
+        <h2>استمارة عقد إيجار جديد</h2>
+        <p>نسخة المعاينة والتحميل المباشر</p>
+    </div>
+
+    <!-- بيانات المؤجر -->
+    <div class="section">
+        <h3>بيانات المؤجر</h3>
+        <div class="form-group">
+            <label>اسم المؤجر *</label>
+            <input type="text" id="ownerName" placeholder="أدخل اسم المؤجر">
+        </div>
+        <div class="form-group">
+            <label>الرقم التعريفي للمؤجر (الرقم المدني) *</label>
+            <input type="text" id="ownerId" placeholder="أدخل الرقم التعريفي">
+        </div>
+        <div class="form-group">
+            <label>رقم الهاتف النقال *</label>
+            <input type="text" id="ownerPhone" placeholder="أدخل رقم الهاتف">
+        </div>
+    </div>
+
+    <!-- بيانات العقار -->
+    <div class="section">
+        <h3>بيانات العقار</h3>
+        <div class="form-group">
+            <label>رقم المبنى *</label>
+            <input type="text" id="buildingNo" placeholder="أدخل رقم المبنى">
+        </div>
+        <div class="form-group">
+            <label>رقم القطعة *</label>
+            <input type="text" id="plotNo" placeholder="أدخل رقم القطعة">
+        </div>
+        <div class="form-group">
+            <label>رقم حساب الكهرباء للعقار *</label>
+            <input type="text" id="electricityNo" placeholder="أدخل رقم حساب الكهرباء">
+        </div>
+    </div>
+
+    <!-- تفاصيل العقد -->
+    <div class="section">
+        <h3>تفاصيل العقد</h3>
+        <div class="form-group">
+            <label>القيمة الإيجارية شهرياً *</label>
+            <input type="text" id="rentalValue" placeholder="مثال: 70">
+        </div>
+    </div>
+
+    <button class="btn-submit" onclick="startPDFGeneration()">حفظ البيانات وطباعة الاستمارة</button>
+</div>
+
+<!-- استدعاء مكتبات الـ PDF المباشرة -->
+<script src="https://unpkg.com"></script>
+<script src="https://unpkg.com"></script>
+<script src="script.js"></script>
+</body>
+</html>
